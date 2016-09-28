@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<div id="books">
+    <form id="add-book" action="#">
+        <div>
+            <label for="cover-image">封面图片</label>
+            <input id="cover-image" name="coverImage" type="file"/>
+            <label for="title">标题:</label>
+            <input id="title" type="text" name="title"/>
+            <label for="author">作者:</label>
+            <input id="author" type="text" name="author"/>
+            <label for="release-date">发布日期</label>
+            <input id="release-date" type="text" name="releaseDate"/>
+            <label for="keywords">关键词</label>
+            <input id="keywords" type="text" name="keywords"/>
+            <button id="add">添加</button>
+        </div>
+
+    </form>
+
+
+</div>
+<script type="text/template" id="book-template">
+    <img src="<%= coverImage %>"/>
+    <ul>
+        <li><%= title %></li>
+        <li><%= author %></li>
+        <li><%= releaseDate %></li>
+        <li><%= keywords %></li>
+    </ul>
+    <button class="delete">删除</button>
+</script>
+<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+
+<script src="http://cdn.bootcss.com/lodash.js/3.9.3/lodash.js"></script>
+<script src="http://cdn.bootcss.com/backbone.js/1.2.1/backbone-min.js"></script>
+<script src="js/models/book.js"></script>
+<script src="js/collections/library.js"></script>
+<script src="js/views/book.js"></script>
+<script src="js/views/library.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
