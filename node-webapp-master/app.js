@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs'); //定义模板为.html格式
 
 // -----------------------------------------------------------
-var config = require('./config'); //配置 
-var log = require('./lib/log'); //日志 
+var config = require('./config'); //配置
+var log = require('./lib/log'); //日志
 var routes = require('./routes/routes'); //路由
 
 // ====================================================
@@ -21,7 +21,7 @@ app.engine('html', ejs.__express); //or app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 
 // -----------------------------------------------------------
-log(app);  
+log(app);
 
 // -----------------------------------------------------------
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -45,6 +45,7 @@ app.use(function(req, res) {
 
 app.listen(config.port, function() {
     console.log('服务已经启动，监听端口是：' + config.port);
+    //监听端口3000
 });
 
 module.exports = app;
