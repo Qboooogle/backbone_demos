@@ -1,11 +1,11 @@
-
+//默认路由
 var index = require('./blogs').index; // 处理首页
 var blogs = require('./blogs').blog; //处理
 
-// ---------------------------------------------------------- 
+// ----------------------------------------------------------
 
 module.exports = function(app) {
-	app.get('/', index.run); 
+	app.get('/', index.run);
 	app.get('/blog', index.run);
 	app.get('/good', index.run);
 	app.get('/rank', index.run);
