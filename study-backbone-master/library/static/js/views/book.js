@@ -1,3 +1,8 @@
+//视图一般包含如下内容：
+//1 视图的根元素
+//2 初始化函数
+//3 绘制函数
+
 var app = app || {};
 
 app.BookView = Backbone.View.extend({
@@ -27,3 +32,4 @@ app.BookView = Backbone.View.extend({
         this.model.destroy();
     }
 });
+
