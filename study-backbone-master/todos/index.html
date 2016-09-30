@@ -23,7 +23,9 @@
     <p>双击开始编辑元素</p>
 </div>
 
-<script type="text/template" id="item-template">
+<!-- todosView.js 定义视图逻辑，并绑定相关的事件。
+ -->
+ <script type="text/template" id="item-template">
     <div class="view">
         <input class="toggle" type="checkbox" <%= completed?'checked':'' %> />
         <label><%- title %></label>

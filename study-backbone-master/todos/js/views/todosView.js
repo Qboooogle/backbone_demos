@@ -6,6 +6,12 @@ app.TodoView = Backbone.View.extend({
 
     template: _.template($('#item-template').html()),
 
+//【事件处理】
+//双击label标签，启用编辑
+//键盘enter按下 更新当前的items
+//鼠标键入.edit 关闭
+//点击 .toggle 切换完成
+//点击 .destroy 清除item
     events: {
         'dblclick label': 'edit',
         'keypress .edit': 'updateOnEnter',
@@ -14,6 +20,7 @@ app.TodoView = Backbone.View.extend({
         'click .destroy': 'clear'
     },
 
+//初始化，监听模型的变化，销毁和可视性，调用相应的处理函数
     initialize: function () {
         //监听模型的改变
         this.listenTo(this.model, 'change', this.render);
@@ -21,6 +28,7 @@ app.TodoView = Backbone.View.extend({
         this.listenTo(this.model, 'visible', this.toggleVisible);
     },
 
+//渲染，
     render: function () {
 
         this.$el
