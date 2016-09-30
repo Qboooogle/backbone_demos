@@ -18,6 +18,7 @@
     </section>
     <footer id="footer"></footer>
 </section>
+
 <div id="info">
     <p>双击开始编辑元素</p>
 </div>
@@ -30,6 +31,7 @@
     </div>
     <input class="edit" type="text" value="<%- title %>"/>
 </script>
+
 <script type="text/html" id="stats-template">
     <span id="todo-count">
     <strong><%= remaining %></strong>
@@ -49,13 +51,9 @@
     <% if(completed){ %>
     <button id="clear-completed">清除所有已完成 (<%= completed %>)</button>
     <% } %>
-
 </script>
 
-
-
 <script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
-
 <script src="http://cdn.bootcss.com/lodash.js/3.9.3/lodash.js"></script>
 <script src="http://cdn.bootcss.com/backbone.js/1.2.1/backbone-min.js"></script>
 <script src="http://cdn.bootcss.com/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
@@ -66,6 +64,7 @@
 <script src="js/views/appView.js"></script>
 <script src="js/routers/router.js"></script>
 <script src="js/main.js"></script>
+
 <script>
     $(function(){
         new app.AppView();
