@@ -1,3 +1,8 @@
+//图书库视图。
+//backbone 中视图是所有UI逻辑的控制；
+//具体的页面元素则由模板来完成。
+
+
 var app = app || {};
 
 app.LibraryView = Backbone.View.extend({
