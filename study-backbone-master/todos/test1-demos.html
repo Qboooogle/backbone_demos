@@ -78,8 +78,8 @@ var Man = Backbone.Model.extend({
         });
     },
     defaults: {
-        name:'张三',
-        age: '38'
+        name:'Qboooogle',
+        age: '20'
     },
     aboutMe: function(){
         return '我叫' + this.get('name') + ',今年' + this.get('age') + '岁';
@@ -87,10 +87,10 @@ var Man = Backbone.Model.extend({
 });
 var man = new Man;
 //触发绑定的change事件，alert。
-man.set({name:'the5fire'});
+man.set({name:"jiangbourn"});
 
 //触发绑定的change事件，alert。
-man.set({name:'the5fire.com'});
+man.set({name:'jiangbourn-qboooogle'});
 
 })(jQuery);
 </script>
