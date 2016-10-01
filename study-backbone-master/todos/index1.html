@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="css/base.css">
     </head>
     <body>
     <section id = "todoapp">
@@ -13,7 +14,6 @@
          	<input id = "toggle-all" type = "checkbox"/>
          	<label for = "toggle-all">完成</label>
          	<ul id = "todo-list">
-         		<li></li>
          	</ul>
         </section>
         <footer  id = "footer">
@@ -34,6 +34,7 @@
     	<input class = "edit" type = "text" value = "<%- title %>" />
     </script>
 
+    <!-- 定义功能切换模块 -->
     <script  id = "stats-template" type="text/html" >
     	<span id = todo-count>
     		<strong><%= remaining %></strong>
@@ -54,13 +55,13 @@
         <button id = "clear-complete">清除所有已完成(<%=completed %>) </button>
     </script>
 
-//引入库资源
+    <!-- 引入库资源 -->
 	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
 	<script src="http://cdn.bootcss.com/lodash.js/3.9.3/lodash.js"></script>
 	<script src="http://cdn.bootcss.com/backbone.js/1.2.1/backbone-min.js"></script>
 	<script src="http://cdn.bootcss.com/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
 
-//引入自定义文件
+    <!-- 引入自定义文件 -->
 	<script src="js/model/todo.js"></script>
 	<script src="js/collections/todos.js"></script>
 	<script src="js/views/todosView.js"></script>
@@ -70,7 +71,7 @@
 
 	<script>
 		$(function() {
-			new app.APPView();
+			new app.AppView();
 		})
 	</script>
 
