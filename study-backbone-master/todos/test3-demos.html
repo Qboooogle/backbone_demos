@@ -1,0 +1,44 @@
+<!--Backbone中的router，属于动态的部分，
+    见名知意，router——路由的意思，显然是能够控制url指向哪个函数的。
+    在现在的单页应用中，所有的操作、内容都在一个页面上呈现，
+	这意味着浏览器的url始终要定位到当前页面。
+	那么一个页面中的所有的操作总不能都通过事件监听来完成，
+	尤其是对于需要切换页面的场景以及需要分享、收藏固定链接的情况。
+	因此就有了router，通过hash的方式（即#page）来完成。
+	不过随着浏览器发展，大多数的浏览器已经可以通过history api来操控url的改变，可以直接使用 /page 来完成之前需要hash来完成的操作，这种方式看起来更为直观一些。
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>backbone-Router</title>
+</head>
+<body>
+     <a href="#actions">testActions</a>
+</body>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+<script>
+(function ($) {
+/**
+*第一版-发送数据到Server端
+*点击该链接时，便会触发defaultRouter这个方法。
+*/
+var AppRouter = Backbone.Router.extend({
+    routes: {
+        "*actions" : "defaultRoute"
+    },
+
+    defaultRoute : function(actions){
+        alert(actions);
+    }
+});
+
+var app_router = new AppRouter;
+
+Backbone.history.start();
+
+})(jQuery);
+</script>
+</html>
