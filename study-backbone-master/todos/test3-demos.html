@@ -15,6 +15,7 @@
 </head>
 <body>
      <a href="#actions">testActions</a>
+     <a href="#/posts/120">Post 120</a>
 </body>
 <script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
 <script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
@@ -22,9 +23,8 @@
 <script>
 (function ($) {
 /**
-*第一版-发送数据到Server端
+*第一版
 *点击该链接时，便会触发defaultRouter这个方法。
-*/
 var AppRouter = Backbone.Router.extend({
     routes: {
         "*actions" : "defaultRoute"
@@ -36,8 +36,37 @@ var AppRouter = Backbone.Router.extend({
 });
 
 var app_router = new AppRouter;
-
+//需要通过调用Backbone.history.start()方法来初始化这个Router。
 Backbone.history.start();
+*/
+
+/**
+*第二版-routes映射要怎么传参数
+*点击该链接时，便会触发defaultRouter这个方法。
+*/
+var AppRouter = Backbone.Router.extend({
+
+    routes: {
+        "posts/:id" : "getPost",
+        "*actions" : "defaultRoute"
+    },
+
+    getPost: function(id) {
+        alert(id);
+    },
+
+    defaultRoute : function(actions){
+        alert(actions);
+    }
+});
+
+var app_router = new AppRouter;
+Backbone.history.start();
+
+
+
+
+
 
 })(jQuery);
 </script>
