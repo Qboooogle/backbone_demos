@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>the5fire-backbone-model</title>
+	<meta charset="UTF-8">
+	<title>backbone-model</title>
 </head>
 <body>
 </body>
@@ -12,14 +13,60 @@
 <script>
 (function ($) {
 /**
-*第一版，最简单的
-**/
+*第一版
 var Man = Backbone.Model.extend({
     initialize: function(){
         alert('Hey, you create me!');
     }
 });
 var man = new Man;
+**/
+
+/**
+*第二版
+
+// var Man = Backbone.Model.extend({
+//     initialize: function(){
+//         alert('Hey, you create me!');
+//     }
+// });
+// var man = new Man;
+// man.set({name:'Qboooogle',age:'10'});
+// alert(man.get('name'));
+
+var Man = Backbone.Model.extend({
+    initialize: function(){
+        alert('Hey, you create me!');
+    },
+    defaults: {
+        name:'Qboooogle',
+        age: '20'
+    }
+});
+var man = new Man;
+alert(man.get('name'));
+**/
+
+/**
+*第三版
+*/
+var Man = Backbone.Model.extend({
+    initialize: function(){
+        alert('Hey, you create me!');
+    },
+    defaults: {
+        name:'Qboooogle',
+        age: '38'
+    },
+    aboutMe: function(){
+        return '我叫' + this.get('name') + ',今年' + this.get('age') + '岁';
+    }
+});
+var man = new Man;
+alert(man.aboutMe());
+
+
+
 })(jQuery);
 </script>
 </html>
