@@ -30,10 +30,6 @@ var TodoList = Backbone.Collection.extend({
     comparator: function (todo) {
         return todo.get('order');
     }
-
-
-
-
 });
 
 app.Todos = new TodoList();
