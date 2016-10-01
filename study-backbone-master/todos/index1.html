@@ -21,7 +21,58 @@
     </section>
 
     <div id = "info">
-
+         <p>双击开始编辑元素</p>
     </div>
-    </body>
+
+    <!-- todosView.js定义视图逻辑，并绑定相应的事件。 -->
+    <script id = "item-template" type="text/template">
+    	<div class = "view">
+    		<input class = "toggle" type = "chechbox"
+    		<%= completed? 'checked':'' %> />
+    		<label> <%- title %></label>
+    	</div>
+    	<input class = "edit" type = "text" value = "<%- title %>" />
+    </script>
+
+    <script  id = "stats-template" type="text/html" >
+    	<span id = todo-count>
+    		<strong><%= remaining %></strong>
+    		<%= remaining ===1? 'item' : 'items' %> left
+    	</span>
+    	<ul>
+    		<li>
+    		    <a class = "selected" href="#/">全部</a>
+    		</li>
+    		<li>
+    			<a href="#/active">未完成</a>
+    		</li>
+    		<li>
+    			<a href="#/completed">已完成</a>
+    		</li>
+    	</ul>
+    	<% if(completed) { %>
+        <button id = "clear-complete">清除所有已完成(<%=completed %>) </button>
+    </script>
+
+//引入库资源
+	<script src="http://cdn.bootcss.com/jquery/2.1.4/jquery.js"></script>
+	<script src="http://cdn.bootcss.com/lodash.js/3.9.3/lodash.js"></script>
+	<script src="http://cdn.bootcss.com/backbone.js/1.2.1/backbone-min.js"></script>
+	<script src="http://cdn.bootcss.com/backbone-localstorage.js/1.1.16/backbone.localStorage.js"></script>
+
+//引入自定义文件
+	<script src="js/model/todo.js"></script>
+	<script src="js/collections/todos.js"></script>
+	<script src="js/views/todosView.js"></script>
+	<script src="js/views/appView.js"></script>
+	<script src="js/routers/router.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+		$(function() {
+			new app.APPView();
+		})
+	</script>
+
+	</body>
 </html>
