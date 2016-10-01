@@ -16,7 +16,6 @@
 (function ($) {
 /**
 *第一版-关于book和bookshelf的例子
-*/
 var Book = Backbone.Model.extend({
 
     defaults : {
@@ -52,10 +51,32 @@ bookShelf.remove(book3);
 bookShelf.each(function(book){
     alert(book.get('title'));
 });
+*/
 
 
+/**
+*第二版-使用fetch从服务器端获取数据
+*/
+var showAllBooks = function(){
+    bookShelf.each(function(book){
+        //将book数据渲染到页面的操作。
+        document.writeln(book.get('title'));
+    });
+}
 
-
+bookShelf.bind('reset',showAllBooks);
+bookShelf.url = '/books/'; //注意这里
+bookShelf.fetch({
+    // 需要主动传递reset，才会触发reset
+    reset: true,
+    success:function(collection, response, options){
+        collection.each(function(book){
+            alert(book.get('title'));
+        });
+    },error:function(collection, response, options){
+        alert('error');
+    }
+});
 
 
 })(jQuery);
