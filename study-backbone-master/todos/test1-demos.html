@@ -1,0 +1,25 @@
+<!-- 测试Model，Model是js应用的核心，包括基础的数据以及围绕着这些数据的逻辑：数据转换、验证、属性计算和访问控制 -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>the5fire-backbone-model</title>
+</head>
+<body>
+</body>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/jquery-1.10.2.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/underscore.js"></script>
+<script src="http://the5fireblog.b0.upaiyun.com/staticfile/backbone.js"></script>
+<script>
+(function ($) {
+/**
+*第一版，最简单的
+**/
+var Man = Backbone.Model.extend({
+    initialize: function(){
+        alert('Hey, you create me!');
+    }
+});
+var man = new Man;
+})(jQuery);
+</script>
+</html>
