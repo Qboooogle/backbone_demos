@@ -27,6 +27,7 @@ app.AppView = Backbone.View.extend({
         this.listenTo(app.Todos, 'all', this.render);
 
         app.Todos.fetch();
+        console.log(this);
     },
 
     render: function () {
