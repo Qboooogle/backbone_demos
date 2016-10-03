@@ -24,10 +24,10 @@ app.use(express.static(path.join(__dirname, 'static')));
 //获取图书
 app.get('/api/books', function (req, res) {
     res.send([
-        {title:'第一本书',author:'湿哒哒111',releaseDate:'2007','keywords':'sdffd',id:1},
-        {title:'第er本书',author:'湿哒哒',releaseDate:'2007','keywords':'sdffd',id:2},
-        {title:'第san本书',author:'湿哒哒',releaseDate:'2007','keywords':'sdffd',id:3},
-        {title:'第si本书',author:'湿哒哒',releaseDate:'2007','keywords':'sdffd',id:4}
+        {title:'第一本书',author:'Qboooogle',releaseDate:'2007','keywords':'sdffd',id:1},
+        {title:'第二本书',author:'Qboooogle',releaseDate:'2007','keywords':'sdffd',id:2},
+        {title:'第三本书',author:'Qboooogle',releaseDate:'2007','keywords':'sdffd',id:3},
+        {title:'第四本书',author:'Qboooogle',releaseDate:'2007','keywords':'sdffd',id:4}
     ]);
   /*  BookModel.find(function (err, books) {
         if (err)
@@ -54,4 +54,4 @@ app.delete('/api/books/:id',function(req,res){
 });
 
 app.listen(3000);
-// console.log("服务器已经在 http://localhost:3000 端口运行！");
+console.log("服务器已经在 http://localhost:3000 端口运行！");
