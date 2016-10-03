@@ -16,6 +16,4 @@ app.BookModel= Backbone.Model.extend({
    //      return "name can not be empty!"
    //     }
    //}
-   }
-   }
 });
