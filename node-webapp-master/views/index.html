@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="/css/style.css" />
 </head>
 <body>
+<!-- 头部-包括左边回退，中间大标题，右边搜索框。
+功能区-博客，精华，48小时，新闻。 -->
 	<div class="app">
 		<% if (type != 'search') { %>
 			<div class="page-list">
@@ -37,11 +39,15 @@
 		<% } %>
 	</div>
 
+<!-- 正在加载板块 -->
     <div class="loading">
         <div class="loading-text">正在加载</div>
 	</div>
 
+<!-- 模板 -->
 
+<!-- 1《最开始页面》
+    文章列表，包括每一篇文章的标题，内容，作者，评论数，阅读数。 -->
 	<script type="text/html" id="list">
 		{{each list as value}}
 		    <li data-target="/{{type}}/{{value.id}}" data-link="{{value.link}}">
@@ -52,6 +58,8 @@
 		{{/each}}
 	</script>
 
+<!-- 2 《4个具体的功能区页面》
+    头部功能区标题，还包括回退，搜索，主体为相应的功能对应的文章列表 -->
 	<script type="text/html" id="template-list">
 		<header class="header">
 			<div class="back" data-target="back">
@@ -76,6 +84,8 @@
 		{{if isBlog}} <div class="list-more" data-target="more">点击加载更多</div> {{/if}}
 	</script>
 
+<!-- 3 《文章详细页面》
+    包括头部的回退，标题，以及该页面的文章主体内容。 -->
 	<script type="text/html" id="template-detail">
 		<header class="detail-header">
 			<div class="back" data-target="back">
@@ -87,6 +97,8 @@
 		<div class="detail-content">{{#content}}</div>
 	</script>
 
+<!-- 4 《搜索框页面》
+    包括输入框，取消和搜索。 -->
 	<script type="text/html" id="template-search">
 		<header class="header">
 		    <div class="top-search"><input type="text" placeholder="请输入" id="i-text" /></div>
