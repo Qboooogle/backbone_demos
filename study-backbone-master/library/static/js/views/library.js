@@ -45,7 +45,7 @@ app.LibraryView = Backbone.View.extend({
             var $this = $(this);
             data[this.name] = $this.val().trim();
         });
-        delete data.coverImage;
+        //delete data.coverImage;
         this.collection.add(new app.BookModel(data));
         e.preventDefault();
         return false;
